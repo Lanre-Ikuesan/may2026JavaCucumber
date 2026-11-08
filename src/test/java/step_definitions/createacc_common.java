@@ -28,7 +28,7 @@ public class createacc_common extends TestBase {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     }
- //step to click the register button on the home page
+
     @When("^I click the login/register button$")
     public void iClickTheLoginRegisterButton() {
         pages_locators_And_Methods pages = PageFactory.initElements(driver, pages_locators_And_Methods.class);
