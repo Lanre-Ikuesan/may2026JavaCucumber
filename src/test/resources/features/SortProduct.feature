@@ -1,5 +1,8 @@
 Feature: Products
 
+  Background:
+    Given i am on the saucedemo homepage
+
   Scenario: User should be able to sort products
     Given i am logged in to the sauce demo app
     When i locate the sort dropdown field

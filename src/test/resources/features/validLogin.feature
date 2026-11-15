@@ -1,4 +1,4 @@
-@ignore
+
 Feature: Login
 
   Scenario: verify that users with valid credentials can login successfully
@@ -19,8 +19,8 @@ Feature: Login
     Examples:
       | username                    |password      |errorMessage                                                             |
       | standard_user               |secret_sau    |Epic sadface: Username and password do not match any user in this service |
-      | standard_                   |secret_sauce  |Epic sadface: Username and password do not match any user in this service |
-      | standard_                   |secret_sau    |Epic sadface: Username and password do not match any user in this service |
-      |                             |secret_sauce  |Epic sadface: Username is required                                        |
-      |standard_user                |              |Epic sadface: Password is required                                        |
-      |                             |              |Epic sadface: Username is required                                        |
+      #| standard_                   |secret_sauce  |Epic sadface: Username and password do not match any user in this service |
+      #| standard_                   |secret_sau    |Epic sadface: Username and password do not match any user in this service |
+      #|                             |secret_sauce  |Epic sadface: Username is required                                        |
+      #|standard_user                |              |Epic sadface: Password is required                                        |
+      #|                             |              |Epic sadface: Username is required                                        |
