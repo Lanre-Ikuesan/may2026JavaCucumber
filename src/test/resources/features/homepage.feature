@@ -1,4 +1,3 @@
-@ignore
 Feature: Home page
 
   Scenario: Homepage should contain the vital elements

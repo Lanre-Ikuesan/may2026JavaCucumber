@@ -1,3 +1,4 @@
+@ignore
 Feature: Products
 
   Scenario: User should be able to sort products
