@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class createacc_common extends TestBase {
 
@@ -25,7 +25,7 @@ public class createacc_common extends TestBase {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(CONFIG.getProperty("uat_url"));
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
     }
 
