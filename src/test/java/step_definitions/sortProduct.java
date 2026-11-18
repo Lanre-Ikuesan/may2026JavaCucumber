@@ -1,5 +1,8 @@
 package step_definitions;
 
+import Base.TestBase;
+import Pages.page_Methods_And_locators;
+import Pages.pages_locators_And_Methods;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,39 +12,31 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class sortProduct {
-    public WebDriver driver;
+public class sortProduct extends TestBase {
+
     @Given("^i am logged in to the sauce demo app$")
     public void iAmLoggedInToTheSauceDemoApp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.navigate().to("https://www.saucedemo.com/");
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.name("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
-        driver.findElement(By.className("shopping_cart_link")).isDisplayed();
-    }
+        page_Methods_And_locators pages = PageFactory.initElements(driver, page_Methods_And_locators.class);
+        pages.iEnterTheCorrectUsername();
+        pages.iEnterTheCorrectPassword();
+        pages.clickloginButtonAtHomePage();
+        pages.locateTheShoppingCardAtHomePage();}
 
     @When("^i locate the sort dropdown field$")
     public void iLocateTheSortDropdownField() {
-        driver.findElement(By.className("product_sort_container")).isDisplayed();
-    }
+        page_Methods_And_locators pages = PageFactory.initElements(driver, page_Methods_And_locators.class);
+        pages.selectTheProductdropdown();}
 
     @And("^i choose the sort option$")
     public void iChooseTheSortOption() throws InterruptedException {
-        Select dropdown = new Select(driver.findElement(By.className("product_sort_container")));
-                dropdown.selectByIndex(2);
-                Thread.sleep(4000);
-    }
+        page_Methods_And_locators pages = PageFactory.initElements(driver, page_Methods_And_locators.class);
+        pages.selectTheSortOption();}
 
     @Then("^the products should be sorted accordingly$")
     public void theProductsShouldBeSortedAccordingly() {
-      String  expectedTopListedProductAfterSorting = "Test.allTheThings() T-Shirt (Red)";
-      String  ActualTopListedProductAfterSorting = driver.findElement(By.id("item_3_title_link")).getText();
-        Assert.assertEquals(ActualTopListedProductAfterSorting, expectedTopListedProductAfterSorting);
-        System.out.println();
-    }
+        page_Methods_And_locators pages = PageFactory.initElements(driver, page_Methods_And_locators.class);
+        pages.theProductsShouldBeSortedAccordingly();}
 }
