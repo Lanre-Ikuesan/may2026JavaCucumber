@@ -1,12 +1,10 @@
 package step_definitions;
 
 import Base.TestBase;
-import Pages.page_Methods_And_locators;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
