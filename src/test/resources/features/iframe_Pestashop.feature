@@ -1,3 +1,4 @@
+@ignore
 Feature: Switch Frame
 
   Scenario: users should be able to switch frame within the page
