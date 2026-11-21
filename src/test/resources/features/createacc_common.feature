@@ -1,4 +1,3 @@
-@ignore
 Feature: Common
 
   Scenario: common steps
