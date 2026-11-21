@@ -7,13 +7,16 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class validLogin extends TestBase {
     @Given("^I am on the home page$")
     public void iAmOnTheHomePage() {
-        page_Methods_And_locators pages = PageFactory.initElements(driver, page_Methods_And_locators.class);
-        WebDriverManager.chromedriver().setup();}
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(CONFIG.getProperty("Saucedemo_url"));}
     @When("^I enter the correct username$")
     public void iEnterTheCorrectUsername() {
         page_Methods_And_locators pages = PageFactory.initElements(driver, page_Methods_And_locators.class);
